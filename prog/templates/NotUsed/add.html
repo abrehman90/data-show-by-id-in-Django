@@ -1,0 +1,27 @@
+
+<div class="topnav">
+    <a class="active" href="{% url 'index' %}">Back</a>
+</div>
+<div class="rendered-form">
+    <div class="formbuilder-select form-group field-City">
+        <label for="City" class="formbuilder-select-label">CITY<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Office Location">?</span></label>
+        <select class="form-control" name="City" access="true" role="1" id="City" required="required" aria-required="true">
+            <option disabled="null" selected="null">Select City</option>
+            <option value="PR" id="City-0">Peshawar</option>
+            <option value="Lr" id="City-1">Lahore</option>
+            <option value="Is" id="City-2">Islamabad</option>
+        </select>
+    </div>
+    <div class="formbuilder-select form-group field-Progress">
+        <label for="Progress" class="formbuilder-select-label">Progress Type<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Either you want Invoice, Report or Quotation">?</span></label>
+        <select class="form-control" name="Progress" access="true" role="1" id="Progress" required="required" aria-required="true">
+            <option disabled="null" selected="null">Select Progress type</option>
+            <option value="Inv" id="Progress-0">Invoice</option>
+            <option value="Quot" id="Progress-1">Quotation</option>
+            <option value="rep" id="Progress-2">Report</option>
+        </select>
+    </div>
+      <div class="formbuilder-button form-group field-Save">
+        <button type="submit" class="btn-success btn" name="Save" value="Add" access="true" role="1" style="success" id="Save">Add</button>
+    </div>
+</div>

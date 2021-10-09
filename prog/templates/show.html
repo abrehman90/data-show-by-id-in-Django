@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div class="topnav">
+    <a class="active" href="{% url 'index' %}">Back</a>
+</div>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>Type</th>
+            <th>Created at</th>
+            <th>Created BY</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in data %}
+        <tr class="active-row">
+            <td>{{ i.city }}</td>
+            <td> <a href="/showdata/{{ i.id }}" class="btn btn-primary">
+                    {{i.typ}}</a></td>
+            <td>{{ i.added_at }}</td>
+            {% if user.is_authenticated %}
+            <td>{{ user.username }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{#<div id="modalScrollableCenter" class="modal fade" tabindex="-1">#}
+{#    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">#}
+{#        <div class="modal-content">#}
+{#            <div class="modal-header">#}
+{#                <h5 class="modal-title">{{showme.type}}</h5>#}
+{#                <button type="button" class="close" data-dismiss="modal">&times;</button>#}
+{#            </div>#}
+{#            <div class="modal-body">#}
+{#                <!-- {{showme.InvAmount}} -->#}
+{#            </div>#}
+{#            <div class="modal-footer">#}
+{#                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->#}
+{#                <button type="button" class="btn btn-primary" data-dismiss="modal">OK, Got it!</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{% endblock %}
